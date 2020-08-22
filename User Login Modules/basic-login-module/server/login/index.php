@@ -13,10 +13,10 @@
   if(isset($_POST) && !empty($_POST["user_name"]))
   {
     //Creating Database Connection
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "login_modules";
+    $servername = "localhost"; //replace with your hostname
+    $username = "root"; //replace with your database username
+    $password = ""; //replace with your database password
+    $dbname = "login_modules"; //replace with your database name
     $con = mysqli_connect($servername,$username,$password,$dbname);
     if(!$con)
     {
@@ -36,7 +36,7 @@
         $response["url"] = "dashboard"; //set this to your target url after successful authentication
         $response["message"] = "access granted";
         session_start();
-        $_SESSION["logged"] = session_id(); 
+        $_SESSION["logged"] = session_id();
       }
       else
       {
